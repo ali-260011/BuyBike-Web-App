@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body style="background-color:#f28910; text-align:center">
+    
+
+
+<div th:if="${not #lists.isEmpty(bikes)}">
+   	<h1><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0lXIXeENLF6S7QPDTwDRGmombs6foc2KRC850aQVUZe0xgeFBew" alt=""></h1>
+    <h2 style="text-align:center;color: #d10404; font-size:35px">Bikes Store</h2>
+    <p th:text="'Bikes Count is: ' + ${bikes.size()} + '!'" style="text-align:center; color: #d10404;font-size:20px"/>
+    <table class="table table-striped">
+        <tr style="color: #d10404; text-align:center;">
+            <th style="text-align:center">Id</th>
+            <th style="text-align:center">Brand</th>
+        </tr>
+        <tr th:each="x : ${bikes}">
+            <td th:text="${x.id}" style="text-align:center"></td>
+            <td th:text="${x.brand}" style="text-align:center"></td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>
